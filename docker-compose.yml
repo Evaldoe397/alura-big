@@ -1,0 +1,14 @@
+services:
+  api:
+    # Constrói a imagem a partir do Dockerfile no diretório atual (.)
+    build: .
+    # Mapeia a porta 8000 do seu computador para a porta 8000 do contêiner
+    ports:
+      - "8000:8000"
+    # Monta o diretório atual no diretório /app do contêiner
+    # Isso permite que as alterações no seu código local sejam refletidas
+    # instantaneamente no contêiner, o que é ideal para desenvolvimento.
+    volumes:
+      - .:/app
+    # Define um nome para o contêiner para fácil identificação
+    container_name: imersao-devops-api
